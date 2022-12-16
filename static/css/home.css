@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    height: 4rem;
+}
+
+.cards {
+    background-color: rgba(243, 244, 246, 1);
+
+    min-height: 38.5em;
+    width: 90vw;
+    border: 4px dashed rgb(229 231 235);
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 2vw;
+    /* background-color: black; */
+    /* border: 2px solid; */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+
+    /* transition-property: transform; */
+    /* transition-duration: 1s; */
+    /* transition-timing-function: linear; */
+}
+
+.card-content {}
+
+.card img {
+    /* margin-top: 1vw; */
+    height: 8vw;
+    width: 8vw;
+
+}
+
+.card h5 {
+    text-align: center;
+    margin: 0;
+}
+
+.card p {
+    text-align: center;
+    margin: 0;
+
+}
+
+.card>div>a {
+    height: 2rem;
+    width: 6rem;
+    margin-top: .3rem;
+    display: block;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: #0d6efd;
+    border: 1px solid;
+    border-radius: .375rem;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.card>div>a:hover {
+    background-color: #0b5ed7;
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width:640px) {
+    .search-bar {
+        display: none;
+    }
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+@media (max-width:1260px) {
+    .cards {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width:1080px) {
+    .cards {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width:900px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:730px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:550px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:370px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1vw;
+    }
+}

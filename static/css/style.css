@@ -1,0 +1,730 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --border-color: #3a3778;
+}
+
+div {
+    color: var(--border-color);
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: orange; */
+}
+
+.child {
+    /* background: green; */
+    border: 2px solid var(--border-color);
+    height: 60rem;
+    width: 44rem;
+}
+
+header {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.info {
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.info ul {
+    /* background-color: blue; */
+    width: 25rem;
+    height: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#one {
+    text-decoration: underline;
+}
+
+.heading {
+    height: 6rem;
+    width: 43rem;
+    display: flex;
+    /* background-color: burlywood; */
+}
+
+.logo {
+    visibility: hidden;
+
+    height: 6rem;
+    width: 10rem;
+    background-color: grey;
+}
+
+.name {
+
+    /* background-color: gold; */
+    height: 6rem;
+    width: 33rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#logo-name {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: inherit;
+    height: 55px;
+    /* font-family: ; */
+    /* background-color: aqua; */
+}
+
+.name img {
+    width: inherit;
+    background-color: red;
+}
+
+.about {
+    /* background-color: pink; */
+}
+
+.about h2 {
+    text-align: center;
+}
+
+.address {
+    /* background-color: orange; */
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.address p {
+    padding: 3px;
+    font-size: .9rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.numbers {
+    font-size: .9rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.all-sections {
+    font-size: .9rem;
+}
+
+.section-one {
+    width: 44rem;
+    height: 10rem;
+}
+
+.section-one {
+    /* background-color: beige; */
+}
+
+.grid-div {
+    /* border: 1px solid var(--border-color); */
+    /* background-color: aliceblue; */
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 8rem 14rem 11rem 11rem;
+}
+
+.flex-div {
+    display: flex;
+    height: 2rem;
+    /* background-color: aliceblue; */
+}
+
+.grid-div>div {
+    display: flex;
+    align-items: center;
+    /* padding-left: 5px; */
+
+}
+
+
+
+.flex-div>div {
+    display: flex;
+    align-items: center;
+}
+
+.flex-div>div>p {
+    /* padding-left: 5px; */
+}
+
+input {
+    height: 1.5rem;
+    /* border: none; */
+    padding: 0 0 0 .3rem;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.section-two {
+    /* background-color: blue; */
+    width: 44rem;
+    height: 12.5rem;
+}
+
+.details {
+    height: 2rem;
+    width: 44rem;
+    display: flex;
+    /* background-color: coral; */
+}
+
+.bill,
+.consignee {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bill-input {
+    width: 44rem;
+    height: 4.5rem;
+    display: flex;
+    /* background-color: darkblue; */
+}
+
+.btp,
+.doc {
+    width: 22rem;
+    height: inherit;
+    display: flex;
+    /* background-color: pink; */
+    /* align-items: center; */
+}
+
+.textarea {
+    resize: none;
+    height: 4rem;
+    border: none;
+    margin-top: 5px;
+}
+
+.pan-gst {
+    /* border: 1px solid var(--border-color); */
+    /* background-color: aliceblue; */
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 7rem 15rem 7rem 15rem;
+}
+
+.pan-gst div {
+    display: flex;
+    align-items: center;
+    /* padding-left: 5px; */
+}
+
+.location {
+    width: 22rem;
+    height: 2rem;
+    /* background-color: grey; */
+    display: flex;
+}
+
+.location-one {
+    /* width: 21.875rem; */
+    height: inherit;
+    /* background-color: yellow; */
+    display: flex;
+}
+
+.location-two {
+    height: inherit;
+    /* width: 21.875rem; */
+    /* background-color: violet; */
+    display: flex;
+}
+
+.section-three {
+    width: 44rem;
+    height: 16rem;
+    /* background-color: brown; */
+}
+
+.main-bill {
+    width: 44rem;
+    height: 16rem;
+    /* background-color: chartreuse; */
+}
+
+.about-product {
+    width: 44rem;
+    height: 2rem;
+    display: flex;
+    /* background-color: aquamarine; */
+}
+
+.about-product div {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-amount-before-tax {
+    width: 44rem;
+    height: 2rem;
+    display: flex;
+    /* background-color: aqua; */
+    /* justify-content: center; */
+}
+
+.total-amount-before-tax div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bank {
+    height: 2rem;
+    width: 44rem;
+    display: flex;
+    /* background-color: aliceblue; */
+}
+
+.bd {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty {
+    width: 22rem;
+}
+
+.bank-details {
+    /* background-color: cyan; */
+    width: 44rem;
+    height: 6rem;
+    display: flex;
+}
+
+.bank-name div {
+    width: 10rem;
+    height: 1.4rem;
+}
+
+.bank-names-details div {
+    width: 10rem;
+    height: 1.4rem;
+}
+
+.sign, .for {
+    width: 12rem;
+    height: 6rem;
+    /* background-color:darkturquoise; */
+}
+
+.proprietor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* font-size: 1.1rem; */
+}
+
+.submit {
+    /* background-color: red; */
+    /* height: 3rem; */
+    height: 1.5em;
+    width: 44rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dummy {
+    /* background-color: blue; */
+    height: 1.5rem;
+    width: 44rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media print {
+    .submit {
+        visibility: hidden;
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: orange; */
+}
+
+.child {
+    border: 2px solid black;
+    /* background: green; */
+    height: 60rem;
+    width: 44rem;
+}
+
+header {
+    width: 44rem;
+    height: 11rem;
+    border-bottom: 2px solid black;
+}
+
+.info {
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.info ul {
+    /* background-color: blue; */
+    width: 25rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#one {
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+#two {
+    font-size: 1.2rem;
+}
+
+.heading {
+    height: 5rem;
+    width: 43rem;
+    /* background-color: burlywood; */
+    display: flex;
+}
+
+.name {
+    height: 5rem;
+    width: 44rem;
+    /* background-color: gold; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#logo-name {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    /* background-color: aqua; */
+    width: inherit;
+    height: 3rem;
+}
+
+.name img {
+    width: inherit;
+    background-color: red;
+}
+
+.about {
+    /* background-color: pink; */
+}
+
+.address {
+    height: 2rem;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid;
+}
+
+.address p {
+    padding: 3px;
+    font-size: .9rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.numbers {
+    width: inherit;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-sections {
+    font-size: .9rem;
+}
+
+.section-one {
+    width: 44rem;
+    height: 10rem;
+}
+
+.section-one {
+    /* background-color: beige; */
+}
+
+.grid-div {
+    /* border: 1px solid; */
+    /* background-color: aliceblue; */
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 7rem 15rem 11rem 11rem;
+}
+
+.flex-div {
+    display: flex;
+    height: 2rem;
+    /* background-color: aliceblue; */
+}
+
+.grid-div div {
+    display: flex;
+    align-items: center;
+}
+
+.flex-div div {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    height: 1.5rem;
+    /* border: none; */
+    padding: 0 0 0 .3rem;
+    box-sizing: border-box;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.textarea {
+    width: 22rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.section-two {
+    /* background-color: blue; */
+    width: 44rem;
+    height: 12.5rem;
+}
+
+.details {
+    height: 2rem;
+    width: 44rem;
+    /* background-color: coral; */
+    display: flex;
+}
+
+.bill,
+.consignee {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.consignee {
+    width: 22rem;
+}
+
+.bill-input {
+    width: 44rem;
+    height: 4.5rem;
+    /* background-color: darkblue; */
+    display: flex;
+}
+
+.btp,
+.doc {
+    width: 22rem;
+    height: inherit;
+    /* background-color: pink; */
+    display: flex;
+    /* align-items: center; */
+}
+
+.textarea {
+    resize: none;
+    height: 4rem;
+    border: none;
+    margin-top: 5px;
+}
+
+.pan-gst {
+    /* border: 1px solid; */
+    /* background-color: aliceblue; */
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 7rem 15rem 7rem 15rem;
+}
+
+.pan-gst div {
+    display: flex;
+    align-items: center;
+}
+
+.location {
+    width: 22rem;
+    height: 2rem;
+    /* background-color: grey; */
+    display: flex;
+}
+
+.location-one {
+    /* width: 21.875rem; */
+    height: inherit;
+    /* background-color: yellow; */
+    display: flex;
+}
+
+.location-two {
+    height: inherit;
+    /* width: 21.875rem; */
+    /* background-color: violet; */
+    display: flex;
+}
+
+.section-three {
+    width: 44rem;
+    /* background-color: brown; */
+    height: 16rem;
+}
+
+.main-bill {
+    width: 44rem;
+    height: 16rem;
+    /* background-color: chartreuse; */
+}
+
+.about-product {
+    width: 44rem;
+    height: 2rem;
+    /* background-color: aquamarine; */
+    display: flex;
+}
+
+.about-product div {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-amount-before-tax {
+    width: 44rem;
+    height: 2rem;
+    /* background-color: aqua; */
+    display: flex;
+    /* justify-content: center; */
+}
+
+.total-amount-before-tax div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bank {
+    height: 2rem;
+    width: 44rem;
+    /* background-color: aliceblue; */
+    display: flex;
+}
+
+.bd {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty {
+    width: 22rem;
+}
+
+.bank-details {
+    width: 44rem;
+    height: 6rem;
+    /* background-color: cyan; */
+    display: flex;
+}
+
+.bank-name div {
+    width: 10rem;
+    height: 1.4rem;
+}
+
+.bank-names-details div {
+    width: 10rem;
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sign,
+.for {
+    width: 12rem;
+    height: 6rem;
+    /* background-color:darkturquoise; */
+}
+
+.proprietor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* font-size: 1.1rem; */
+}
+
+@media (max-width:400px) {
+    body {
+        width: fit-content;
+    }
+}

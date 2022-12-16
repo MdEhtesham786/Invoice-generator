@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayesha Metal</title>
+    <link rel="stylesheet" href="../static/css/invoice.css    ">
+    <link rel="stylesheet" href="../static/css/util.css">
+    <script src="../static/js/invoice.js" defer></script>
+
+</head>
+
+<body>
+    <%if(data){%>
+        </p>
+        <div class="parent">
+            <div class="child">
+                <header>
+                    <div class="info">
+                        <ul>
+                            <li id="one">GST INVOICE</li>
+                            <li id="one">
+                            </li>
+                            <li id="two">MOB- +91 9137128020</li>
+                        </ul>
+                    </div>
+                    <div class="heading">
+                        <div class="logo">
+                            <img>
+                        </div>
+                        <div class="name">
+                            <div id="logo-name">
+                                <h1>AYESHA METAL</h1>
+                            </div>
+                            <div class="about">
+                                <h2>Dealers in: Non Ferrous & Ferrous Metals</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <p>Room No. C-139, Director Chl., Ganesh Nagar, Near Rehmat Masjid, Charkop, Kandivali(W),
+                            Mumbai-400067.</p>
+                    </div>
+                    <div class="numbers">
+                        <p>GSTIN: 27MRAPS1986G1Z5</p>
+                        <p>PAN NO: MRAPS1986G</p>
+                        <p>STATE: MAHARASTRA</p>
+                        <p>STATE CODE: 27</p>
+                    </div>
+                </header>
+                <main>
+                    <div class="all-sections">
+                        <section class="section-one">
+                            <div class="grid-div">
+                                <div class="border-bottom border-right">INVOICE NO</div>
+                                <div class="border-bottom border-right ">
+                                    <p class="txt-center">
+                                        <%=data.invoiceNo%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right">TRANSPORT</div>
+                                <div class="border-bottom ">
+                                    <p class="txt-center">
+                                        <%=data.transport%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="grid-div">
+                                <div class="border-bottom border-right">INVOICE DATE</div>
+                                <div class="border-bottom border-right ">
+                                    <p class="txt-center">
+                                        <%=data.invoiceDate%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right">VEHICLE NO</div>
+                                <div class="border-bottom ">
+                                    <p class="txt-center">
+                                        <%=data.vehicleNo%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="grid-div">
+                                <div class="border-bottom border-right">REVERSE CGS</div>
+                                <div class="border-bottom border-right ">
+                                    <p class="txt-center">
+                                        <%=data.reverseCGS%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right">DATE</div>
+                                <div class="border-bottom ">
+                                    <p class="txt-center">
+                                        <%=data.date%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex-div">
+                                <div class="border-bottom border-right seven">STATE</div>
+                                <div class="border-bottom border-right nine ">
+                                    <p>MAHARASHTRA</p>
+                                </div>
+                                <div class="border-bottom border-right four">CODE</div>
+                                <div class="border-bottom border-right two ">
+                                    <p>27</p>
+                                </div>
+                                <div class="border-bottom border-right eleven">PLACE</div>
+                                <div class="border-bottom " style="width:11rem;">
+                                    <p class="txt-center">
+                                        <%=data.place%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex-div">
+                                <div class="border-bottom border-right twenty-two"></div>
+                                <div class="border-bottom border-right eleven">E-WAY BILL NO.</div>
+                                <div class="border-bottom " style="width:11rem;">
+                                    <p class="txt-center">
+                                        <%=data.eWayBillNo%>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section-two">
+                            <div class="details">
+                                <div class="bill border-right twenty-two border-bottom"><b>BILL TO PARTY</b></div>
+                                <div class="consignee border-bottom" style="width: 22rem;"><b>DETAILS OF CONSIGNEE
+                                        (SHIPPED TO)</b>
+                                </div>
+                            </div>
+                            <div class="bill-input">
+                                <div class="btp border-bottom border-right twenty-two ">
+                                    <p class="txt-center">
+                                        <%=data.billToParty%>
+                                    </p>
+                                </div>
+                                <div class="doc border-bottom " style="width: 22rem;">
+                                    <p class="txt-center">
+                                        <%=data.consignee%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pan-gst">
+                                <div class="border-bottom border-right">PAN</div>
+                                <div class="border-bottom border-right ">
+                                    <p class="txt-center">
+                                        <%=data.partyPan%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right">PAN</div>
+                                <div class="border-bottom ">
+                                    <p class="txt-center">
+                                        <%=data.consigneePan%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pan-gst">
+                                <div class="border-bottom border-right">GSTIN No.</div>
+                                <div class="border-bottom border-right ">
+                                    <p class="txt-center">
+                                        <%=data.partyGstinNo%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right">GSTIN NO.</div>
+                                <div class="border-bottom ">
+                                    <p class="txt-center">
+                                        <%=data.consigneeGstinNo%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex-div">
+                                <div class="border-bottom border-right seven">STATE</div>
+                                <div class="border-bottom border-right nine ">
+                                    <p class="txt-center">
+                                        <%=data.partyState%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right four">CODE</div>
+                                <div class="border-bottom border-right two ">
+                                    <p class="txt-center">
+                                        <%=data.partyStateCode%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right seven">STATE</div>
+                                <div class="border-bottom border-right nine ">
+                                    <p class="txt-center">
+                                        <%=data.consigneeState%>
+                                    </p>
+                                </div>
+                                <div class="border-bottom border-right four">CODE</div>
+                                <div class="border-bottom " style="width: 2rem;">
+                                    <p class="txt-center">
+                                        <%=data.consigneeStateCode%>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section-three">
+                            <div class="main-bill">
+                                <div class="about-product">
+                                    <div class="four border-bottom border-right">SR NO.</div>
+                                    <div class="eighteen border-bottom border-right">PRODUCT DESCRIPTION</div>
+                                    <div class="six border-bottom border-right">HSN CODE</div>
+                                    <div class="five border-bottom border-right">QTY (Kg).</div>
+                                    <div class="five border-bottom border-right">RATE</div>
+                                    <div class="border-bottom" style="width: 6rem;">AMOUNT</div>
+                                </div>
+                                <div>
+                                    <div class="about-product">
+                                        <div class="four border-bottom border-right"></div>
+                                        <div class="eighteen border-bottom border-right"></div>
+                                        <div class="six border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="border-bottom" style="width: 6rem;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="about-product">
+                                        <div class="four border-bottom border-right"></div>
+                                        <div class="eighteen border-bottom border-right"></div>
+                                        <div class="six border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="border-bottom" style="width: 6rem;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="about-product">
+                                        <div class="four border-bottom border-right"></div>
+                                        <div class="eighteen border-bottom border-right"></div>
+                                        <div class="six border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="five border-bottom border-right"></div>
+                                        <div class="border-bottom" style="width: 6rem;"></div>
+                                    </div>
+                                </div>
+                                <div class="total-amount-before-tax">
+                                    <div class="twenty-two border-bottom border-right"></div>
+                                    <div class="sixteen border-bottom border-right"><b>TOTAL AMOUNT BEFORE TAX</b></div>
+                                    <div class="border-bottom" style="width: 6rem;"></div>
+                                </div>
+                                <div class="total-amount-before-tax">
+                                    <div class="twenty-two border-bottom border-right"></div>
+                                    <div class="sixteen border-bottom border-right"><b>ADD: CGST 9%</b></div>
+                                    <div class="border-bottom" style="width: 6rem;"></div>
+                                </div>
+                                <div class="total-amount-before-tax">
+                                    <div class="twenty-two border-bottom border-right"></div>
+                                    <div class="sixteen border-bottom border-right"><b>ADD: SGST 9%</b></div>
+                                    <div class="border-bottom" style="width: 6rem;"></div>
+                                </div>
+                                <div class="total-amount-before-tax">
+                                    <div class="twenty-two border-bottom border-right"></div>
+                                    <div class="sixteen border-bottom border-right"><b>TOTAL AMOUNT AFTER TAX</b></div>
+                                    <div class="border-bottom" style="width: 6rem;"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section-four">
+                            <div class="bank">
+                                <div class="border-right border-bottom bd twenty-two"><b>BANK DETAILS</b></div>
+                                <div class="border-bottom empty" style="width: 22rem;"></div>
+                            </div>
+                            <div class="bank-details">
+                                <div class="bank-name">
+                                    <div class="border-right border-bottom ">Bank Name</div>
+                                    <div class="border-right border-bottom">A/C no</div>
+                                    <div class="border-right border-bottom">IFCS Code</div>
+                                    <div class="border-right border-bottom">Branch</div>
+                                </div>
+                                <div class="bank-names-details">
+                                    <div class="border-right border-bottom"><b>ICICI Bank</b></div>
+                                    <div class="border-right border-bottom"><b>058505003183</b></div>
+                                    <div class="border-right border-bottom"><b>ICIC0000585</b></div>
+                                    <div class="border-right border-bottom"><b>Kandivali(West)</b></div>
+                                </div>
+                                <div class="sign border-bottom border-right">
+
+                                </div>
+                                <div class="for border-bottom proprietor">
+                                    <p>for <b>AYESHA METAL</b></p>
+                                    <p>Proprietor</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- <input type="submit" value="Submit"> -->
+                    <div class="submit">
+                        <button class="download">Download</button>
+                        <button class="back">Go back</button>
+                    </div>
+                </main>
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+        <%}else{%>
+            <h1>First fill up the form</h1>
+            <%}%>
+</body>
+
+</html>
