@@ -10,7 +10,7 @@
 
 .cards {
     background-color: rgba(243, 244, 246, 1);
-
+    padding-bottom: 1rem;
     min-height: 38.5em;
     width: 90vw;
     border: 4px dashed rgb(229 231 235);
@@ -18,8 +18,6 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     row-gap: 2vw;
-    /* background-color: black; */
-    /* border: 2px solid; */
 }
 
 .card {

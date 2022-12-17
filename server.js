@@ -7,8 +7,10 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const connectDB = require('./db/connect');
 const router = require('./routes/routes');
-const Invoice = require('./models/product');
+const { Invoice } = require('./models/product');
+const { default: mongoose } = require('mongoose');
 app.use('/static', express.static('static'));
+mongoose.set('strictQuery', true);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.set('layout', './layouts/layout.ejs');
@@ -23,7 +25,7 @@ app.use('/', router);
 
 const deleteAll = async () => {
     try {
-        // await Invoice.remove();
+        // await Invoice.findOneAndDelete({});
         console.log('Removed');
     } catch (err) {
         console.log(err);

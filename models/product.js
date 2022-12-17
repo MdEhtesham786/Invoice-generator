@@ -27,6 +27,14 @@ const billSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    state: {
+        type: String,
+        required: false
+    },
+    code: {
+        type: String,
+        required: false
+    },
     place: {
         type: String,
         required: false

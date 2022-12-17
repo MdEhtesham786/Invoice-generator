@@ -1,12 +1,9 @@
 .border-bottom {
     border-bottom: 2px solid;
-    border-color: var(--border-color);
 }
 
 .border-right {
     border-right: 2px solid;
-    border-color: var(--border-color);
-
 }
 
 .two {
@@ -52,10 +49,4 @@
 
 .twenty-two {
     width: 21.875rem;
-}
-
-.txt-center {
-    /* padding-left: 5px; */
-    /* background-color: red; */
-    /* color: black; */
 }

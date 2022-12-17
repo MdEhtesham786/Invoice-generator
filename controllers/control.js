@@ -37,7 +37,7 @@ const homePage = async (req, res) => {
 
 const generatePage = async (req, res) => {
     try {
-        res.render('check', { title: 'Generate Invoice', layout: '../views/layouts/invoicveLayout.ejs' });
+        res.render('generate', { title: 'Generate Invoice', layout: '../views/layouts/invoicveLayout.ejs' });
     } catch (err) {
         console.log(err);
 
@@ -69,8 +69,8 @@ const forgotPage = async (req, res) => {
 };
 const searchedInvoice = async (req, res) => {
     try {
-        const { id } = req.params;
-        const result = await Invoice.findOne({ invoiceNo: id });
+        const { id: _id } = req.params;
+        const result = await Invoice.findOne({ _id });
         res.render('searchedInvoice', { title: 'Searched Invoice', data: result, layout: '../views/layouts/invoicveLayout.ejs' });
     } catch (err) {
         console.log(err);

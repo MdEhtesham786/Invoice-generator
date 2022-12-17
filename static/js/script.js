@@ -1,14 +1,3 @@
-// let inputs = document.querySelectorAll('input');
-// let btn = document.querySelector('button');
-// btn.addEventListener('click', () => {
-//     // inputs.forEach((input) => {
-//     //     input.value = '123';
-//     // });
-//     for (let i = 0; i < inputs.length - 1; i++) {
-//         inputs[i].value = '123';
-//     }
-// });
-
 let code = document.querySelectorAll(".code");
 let quantityOne = document.getElementById("quantityOne");
 let rateOne = document.getElementById("rateOne");
@@ -17,12 +6,12 @@ let quantityTwo = document.getElementById("quantityTwo");
 let rateTwo = document.getElementById("rateTwo");
 let amountTwo = document.getElementById("amountTwo");
 let quantityThree = document.getElementById("quantityThree");
-let rateThree = document.getElementById("rateThree");  
+let rateThree = document.getElementById("rateThree");
 let amountThree = document.getElementById("amountThree");
 let beforeTaxTotal = document.getElementById("beforeTaxTotal");
-let cgst = document.getElementById('cgst')
-let sgst = document.getElementById('sgst')
-let afterTaxTotal = document.getElementById('afterTaxTotal')
+let cgst = document.getElementById('cgst');
+let sgst = document.getElementById('sgst');
+let afterTaxTotal = document.getElementById('afterTaxTotal');
 let rateValueOne;
 let rateValueTwo;
 let rateValueThree;
@@ -31,10 +20,10 @@ let quantityValueTwo;
 let quantityValueThree;
 let cgstValue = 0;
 let sgstValue = 0;
-let afterTaxTotalValue =0;
-let beforeTaxCheck = ()=>{
+let afterTaxTotalValue = 0;
+let beforeTaxCheck = () => {
   if (amountOne.innerText) {
-    if (amountTwo.innerText ) {
+    if (amountTwo.innerText) {
       if (amountThree.innerText) {
         beforeTaxTotal.innerText =
           parseInt(amountOne.innerText) +
@@ -61,19 +50,19 @@ let beforeTaxCheck = ()=>{
     }
   } else if (amountThree.innerText) {
     beforeTaxTotal.innerText = parseInt(amountThree.innerText);
-  }else{
-    beforeTaxTotal.innerText = ''
+  } else {
+    beforeTaxTotal.innerText = '';
 
   }
-  if(beforeTaxTotal.innerText){
-    cgstValue = (9/100)* parseInt(beforeTaxTotal.innerText)
-    sgstValue = (9/100)* parseInt(beforeTaxTotal.innerText)
-    afterTaxTotalValue = parseInt(beforeTaxTotal.innerText)+cgstValue+sgstValue
-    cgst.innerText = cgstValue.toFixed(2)
-    sgst.innerText = sgstValue.toFixed(2)
-    afterTaxTotal.innerText = afterTaxTotalValue.toFixed(2)
+  if (beforeTaxTotal.innerText) {
+    cgstValue = (9 / 100) * parseInt(beforeTaxTotal.innerText);
+    sgstValue = (9 / 100) * parseInt(beforeTaxTotal.innerText);
+    afterTaxTotalValue = parseInt(beforeTaxTotal.innerText) + cgstValue + sgstValue;
+    cgst.innerText = cgstValue.toFixed(2);
+    sgst.innerText = sgstValue.toFixed(2);
+    afterTaxTotal.innerText = afterTaxTotalValue.toFixed(2);
   }
-}
+};
 
 code.forEach((element) => {
   element.addEventListener("input", function () {
@@ -81,22 +70,22 @@ code.forEach((element) => {
       element.value = null;
     }
   });
-});   
+});
 quantityOne.addEventListener("input", function () {
   quantityValueOne = quantityOne.value;
   if (quantityValueOne == null || quantityValueOne == "") {
     amountOne.innerText = "";
-    
+
   } else {
     if (rateValueOne == null || rateValueOne == "") {
       amountOne.innerText = "";
 
-      
+
     } else {
       amountOne.innerText = parseInt(quantityValueOne) * parseInt(rateValueOne);
     }
   }
-beforeTaxCheck()
+  beforeTaxCheck();
 });
 quantityTwo.addEventListener("input", function () {
   quantityValueTwo = quantityTwo.value;
@@ -109,24 +98,24 @@ quantityTwo.addEventListener("input", function () {
       amountTwo.innerText = parseInt(quantityValueTwo) * parseInt(rateValueTwo);
     }
   }
-  beforeTaxCheck()
+  beforeTaxCheck();
 });
 quantityThree.addEventListener("input", function () {
   quantityValueThree = quantityThree.value;
   if (quantityValueThree == null || quantityValueThree == "") {
     amountThree.innerText = "";
-    
+
   } else {
     if (rateValueThree == null || rateValueThree == "") {
       amountThree.innerText = "";
 
-      
+
     } else {
       amountThree.innerText =
         parseInt(quantityValueThree) * parseInt(rateValueThree);
     }
   }
-  beforeTaxCheck()
+  beforeTaxCheck();
 });
 rateOne.addEventListener("input", function () {
   rateValueOne = rateOne.value;
@@ -139,12 +128,12 @@ rateOne.addEventListener("input", function () {
       amountOne.innerText = parseInt(quantityValueOne) * parseInt(rateValueOne);
     }
   }
-  beforeTaxCheck()
+  beforeTaxCheck();
 });
 rateTwo.addEventListener("input", function () {
   rateValueTwo = rateTwo.value;
   if (rateValueTwo == null || rateValueTwo == "") {
-    amountTwo.innerText = "";    
+    amountTwo.innerText = "";
   } else {
     if (quantityValueTwo == null || quantityValueTwo == "") {
       amountTwo.innerText = "";
@@ -152,24 +141,27 @@ rateTwo.addEventListener("input", function () {
       amountTwo.innerText = parseInt(quantityValueTwo) * parseInt(rateValueTwo);
     }
   }
- beforeTaxCheck()
+  beforeTaxCheck();
 });
 rateThree.addEventListener("input", function () {
   rateValueThree = rateThree.value;
   if (rateValueThree == null || rateValueThree == "") {
     amountThree.innerText = "";
-    
+
   } else {
     if (quantityValueThree == null || quantityValueThree == "") {
       amountThree.innerText = "";
 
-      
+
     } else {
       amountThree.innerText =
         parseInt(quantityValueThree) * parseInt(rateValueThree);
     }
   }
-  beforeTaxCheck()
+  beforeTaxCheck();
 });
 
-   
+// let inputs = document.querySelectorAll('input');
+// inputs.forEach((input) => {
+//   input.value = '123';
+// });
