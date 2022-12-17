@@ -52,6 +52,9 @@ let beforeTaxCheck = () => {
     beforeTaxTotal.innerText = parseInt(amountThree.innerText);
   } else {
     beforeTaxTotal.innerText = '';
+    cgst.innerText = '';
+    sgst.innerText = '';
+    afterTaxTotal.innerText = '';
 
   }
   if (beforeTaxTotal.innerText) {
