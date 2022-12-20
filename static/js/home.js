@@ -23,7 +23,7 @@ burger_btn.addEventListener('click', () => {
         burger.classList.add('hidden');
         cross.classList.remove('hidden');
         cross.classList.add('block');
-        navbar.style.height = 'auto';
+        navbar.style.height = '13.6rem';
     } else {
         cross.classList.remove('block');
         cross.classList.add('hidden');

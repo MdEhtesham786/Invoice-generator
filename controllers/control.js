@@ -1,6 +1,88 @@
 const { Invoice, Register } = require('../models/product');
 const bcrypt = require('bcrypt');
 //Get
+const homePage = async (req, res) => {
+    try {
+        if (res.authenticated) {
+            const Data = (await Invoice.find()).reverse();
+            return res.render('home', { title: 'Home', data: Data });
+        } else {
+            return res.redirect('/');
+        }
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+
+const generatePage = async (req, res) => {
+    try {
+        if (res.authenticated) {
+            res.render('generate', { title: 'Generate Invoice', layout: '../views/layouts/invoicveLayout.ejs' });
+        } else {
+            res.redirect('/');
+        }
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+const loginPage = async (req, res) => {
+    try {
+        if (res.authenticated) {
+            return res.redirect('/home');
+        } else {
+            res.render('form', { title: 'Login', signupData: '', message: '', formType: 'login', layout: '../views/layouts/formLayout.ejs' });
+        }
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+const signUpPage = async (req, res) => {
+    try {
+
+        res.render('form', { title: 'Login', message: '', formType: 'signup', layout: '../views/layouts/formLayout.ejs' });
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+const forgotPage = async (req, res) => {
+    try {
+        res.render('form', { title: 'Forgot', formType: 'forgot', layout: '../views/layouts/formLayout.ejs' });
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+const searchedInvoice = async (req, res) => {
+    try {
+        if (res.authenticated) {
+            const { id: _id } = req.params;
+            const result = await Invoice.findOne({ _id });
+            res.render('searchedInvoice', { title: 'Searched Invoice', data: result, layout: '../views/layouts/invoicveLayout.ejs' });
+        } else {
+            res.redirect('/');
+        }
+    } catch (err) {
+        console.log(err);
+
+    }
+};
+const static = async (req, res) => {
+    try {
+        if (res.authenticated) {
+            const Data = await Invoice.find();
+            res.json({ Data });
+        } else {
+            res.redirect('/');
+        }
+    } catch (err) {
+        console.log(err);
+
+    }
+};
 const logout = async (req, res) => {
     try {
         if (res.authenticated) {
@@ -20,75 +102,10 @@ const logout = async (req, res) => {
 
     }
 };
-const homePage = async (req, res) => {
-    try {
-        if (res.authenticated) {
-            const Data = (await Invoice.find()).reverse();
-            return res.render('home', { title: 'Home', data: Data });
-
-        } else {
-            return res.redirect('/');
-        }
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-
-const generatePage = async (req, res) => {
-    try {
-        res.render('generate', { title: 'Generate Invoice', layout: '../views/layouts/invoicveLayout.ejs' });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-const loginPage = async (req, res) => {
-    try {
-        res.render('form', { title: 'Login', signupData: '', message: '', formType: 'login', layout: '../views/layouts/formLayout.ejs' });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-const signUpPage = async (req, res) => {
-    try {
-        res.render('form', { title: 'Login', message: '', formType: 'signup', layout: '../views/layouts/formLayout.ejs' });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-const forgotPage = async (req, res) => {
-    try {
-        res.render('form', { title: 'Login', formType: 'forgot', layout: '../views/layouts/formLayout.ejs' });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-const searchedInvoice = async (req, res) => {
-    try {
-        const { id: _id } = req.params;
-        const result = await Invoice.findOne({ _id });
-        res.render('searchedInvoice', { title: 'Searched Invoice', data: result, layout: '../views/layouts/invoicveLayout.ejs' });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
-const static = async (req, res) => {
-    try {
-        const Data = await Invoice.find();
-        res.json({ Data });
-    } catch (err) {
-        console.log(err);
-
-    }
-};
 //Post
 const downloadPdf = async (req, res) => {
     try {
+        console.log(req.body);
         const clientInvoice = new Invoice(req.body);
         await clientInvoice.save();
         console.log('Added');
@@ -104,7 +121,7 @@ const login = async (req, res) => {
         const Users = await Register.findOne({ email });
         if (Users === null) {
             console.log('User not found');
-            return res.render('form', { formType: 'login', message: 'User not found', layout: '../views/layouts/formLayout.ejs' });
+            return res.render('form', { formType: 'login', signupData: '', message: 'User not found', layout: '../views/layouts/formLayout.ejs' });
         } else {
             const Comparing = await bcrypt.compare(password, Users.password);
             if (Comparing) {

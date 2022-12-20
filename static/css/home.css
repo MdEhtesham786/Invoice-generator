@@ -5,6 +5,7 @@
 
 .navbar {
     overflow: hidden;
+    transition: all .2s linear 0s;
     height: 4rem;
 }
 

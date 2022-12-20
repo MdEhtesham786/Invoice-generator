@@ -36,25 +36,25 @@
             <div class="-space-y-px rounded-md shadow-sm all-inputs">
                 <div class="input-div" style="margin-bottom:.5rem;">
                     <label for="email-address" class="sr-only">Username</label>
-                    <input id="username" name="username" type="text" autocomplete="username" required
+                    <input id="username" name="username" type="text" autocomplete="username" required minlength="2"
                         class="inputs relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         placeholder="Username">
                 </div>
                 <div class="input-div" style="margin-bottom:.5rem;">
                     <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required
+                    <input id="email-address" name="email" type="email" autocomplete="email" required minlength="5"
                         class="inputs relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         placeholder="Email address">
                 </div>
                 <div class="input-div" style="margin-bottom:.5rem;">
                     <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required
+                    <input id="password" name="password" type="password" autocomplete="current-password" required minlength="4"
                         class="inputs relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         placeholder="Password">
                 </div>
                 <div class="input-div">
                     <label for="password" class="sr-only">Confirm Password</label>
-                    <input id="confirm_password" name="confirm_password" type="password" required
+                    <input id="confirm_password" name="confirm_password" type="password" required minlength="4"
                         class="inputs relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         placeholder="Confirm Password">
                 </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit" id="submitBtn" disabled
+                <button type="submit" id="submitBtn" 
                     class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     <span id="lockIcon" class="absolute inset-y-0 left-0 flex items-center pl-3">
                         <!-- Heroicon name: mini/lock-closed -->
@@ -95,14 +95,14 @@
 inputs.forEach((input)=>{
     input.addEventListener('input',()=>{
         console.log(input.value)
-if(username.value.length>1 && email.value.length>7 && password.value.length>5 && confirm_password.value.length>5){
+if(username.value.length>1 && email.value.length>4 && password.value.length>3 && confirm_password.value.length>3){
     lockIcon.classList.remove('absolute')
 lockIcon.classList.add('hidden')
-submitBtn.removeAttribute('disabled')
+// submitBtn.removeAttribute('disabled')
 }else{
     lockIcon.classList.remove('hidden')
 lockIcon.classList.add('absolute')
-submitBtn.setAttribute('disabled','disabled')
+// submitBtn.setAttribute('disabled','disabled')
 
 }
   })

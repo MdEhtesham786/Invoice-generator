@@ -186,8 +186,13 @@ header {
 
 input {
     height: 1.5rem;
+    /* text-transform: uppercase; */
     /* border: none; */
     border: none;
+}
+
+p {
+    text-transform: uppercase;
 }
 
 input:focus {
@@ -246,6 +251,10 @@ input::-webkit-inner-spin-button {
 .bill-input>div>p {
     /* background-color: green; */
     word-break: break-word;
+}
+
+.bill-input div b {
+    margin: auto;
 }
 
 .btp,
@@ -321,6 +330,10 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.about-product div p {
+    /* text-align: center; */
 }
 
 .total-amount-before-tax {

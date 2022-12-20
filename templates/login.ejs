@@ -36,7 +36,7 @@
             <div class="-space-y-px rounded-md shadow-sm">
                 <div style="margin-bottom:.5rem;">
                     <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required 
+                    <input id="email-address" name="email" type="email" autocomplete="email" required minlength="5"
                     <%if(signupData){%>
                         value="<%=signupData.email%>"
                         <%}%>
@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required
+                    <input id="password" name="password" type="password" autocomplete="current-password" required minlength="4"
                     <%if(signupData){%>
                         value="<%=signupData.password%>"
                         <%}%>
@@ -86,24 +86,24 @@
     </div>
 </div>
 <script >
-//     let email = document.getElementById('email-address')
-//     let password= document.getElementById('password')
-//     let inputs = document.querySelectorAll('.inputs')
-//     let lockIcon = document.getElementById('lockIcon')
-//     let submitBtn =document.getElementById('submitBtn')
-// inputs.forEach((input)=>{
-//     input.addEventListener('input',()=>{
-//         console.log(input.value)
-// if(email.value.length>7 && password.value.length>5){
-//     lockIcon.classList.remove('absolute')
-// lockIcon.classList.add('hidden')
+    let email = document.getElementById('email-address')
+    let password= document.getElementById('password')
+    let inputs = document.querySelectorAll('.inputs')
+    let lockIcon = document.getElementById('lockIcon')
+    let submitBtn =document.getElementById('submitBtn')
+inputs.forEach((input)=>{
+    input.addEventListener('input',()=>{
+        console.log(input.value)
+if(email.value.length>4 && password.value.length>3){
+    lockIcon.classList.remove('absolute')
+lockIcon.classList.add('hidden')
 // submitBtn.removeAttribute('disabled')
-// }else{
-//     lockIcon.classList.remove('hidden')
-// lockIcon.classList.add('absolute')
+}else{
+    lockIcon.classList.remove('hidden')
+lockIcon.classList.add('absolute')
 // submitBtn.setAttribute('disabled','disabled')
 
-// }
-//   })
-// })     
+}
+  })
+})     
 </script>

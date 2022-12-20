@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const connectDB = require('./db/connect');
 const router = require('./routes/routes');
-const { Invoice } = require('./models/product');
+const { Invoice, Register } = require('./models/product');
 const { default: mongoose } = require('mongoose');
 app.use('/static', express.static('static'));
 mongoose.set('strictQuery', true);
@@ -25,7 +25,8 @@ app.use('/', router);
 
 const deleteAll = async () => {
     try {
-        // await Invoice.findOneAndDelete({});
+        // const result = await Register.findOneAndDelete({ email: 'mdehteshamshaikh1@gmail.com' });
+        // console.log(result);
         console.log('Removed');
     } catch (err) {
         console.log(err);

@@ -113,21 +113,23 @@
               <section class="section-two">
                 <div class="details">
                   <div class="bill border-right border-bottom">
-                    <b>BILL TO PARTY</b>
+                    <b>BILL TO PARTY (Name)</b>
                   </div>
                   <div class="consignee border-bottom">
-                    <b>DETAILS OF CONSIGNEE (SHIPPED TO)</b>
+                    <p>
+                      <%=data.billToPartyName%> name
+
+                    </p>
                   </div>
                 </div>
                 <div class="bill-input">
                   <div class="btp border-bottom border-right">
-                    <p class="txt-center">
-                        <%=data.billToParty%>
-                    </p>
+                    <b>BILL TO PARTY (Address)</b>
+                  
                   </div>
                   <div class="doc border-bottom">
                     <p class="txt-center">
-                        <%=data.consignee%>
+                        <%=data.billToPartyAddress%>address
                     </p>
                   </div>
     
@@ -202,24 +204,24 @@
                   <div>
                     <div class="about-product">
                       <div class="four border-bottom border-right"></div>
-                      <div class="eighteen border-bottom border-right">
-                        <p class="txt-center">
-                            <%=data.hsnCode%>
+                      <div class="eighteen border-bottom border-right"style="justify-content: flex-start;">
+                        <p class="txt-center" style="padding-left: 4px;" >
+                            <%=data.productOne%>
                         </p>
                       </div>
                       <div class="six border-bottom border-right">
                         <p class="txt-center">
-                            <%=data.hsnCode%>
+                            <%=data.hsnCodeOne%>
                         </p>
                       </div>
                       <div class="five border-bottom border-right">
                         <p class="txt-center">
-                            <%=data.quantity%>
+                            <%=data.quantityOne%>
                         </p>
                       </div>
                       <div class="five border-bottom border-right">
                         <p class="txt-center">
-                            <%=data.rate%>
+                            <%=data.rateOne%>
                         </p>
                       </div>
                       <div
@@ -227,7 +229,7 @@
                         id="amountOne"
                         style="width: 6rem"
                       ><p class="txt-center">
-                        <%=data.amount%>
+                        <%=data.amountOne%>
                       </p>
                     </div>
                     </div>
@@ -235,69 +237,67 @@
                   <div>
                     <div class="about-product">
                       <div class="four border-bottom border-right"></div>
-                      <div class="eighteen border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.product%>
-                        </p> -->
+                      <div class="eighteen border-bottom border-right"style="justify-content: flex-start;">
+                        <p class="txt-center"style="padding-left: 4px;"  >
+                            <%=data.productTwo%>
+                        </p>
                       </div>
                       <div class="six border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.hsnCode%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.hsnCodeTwo%>
+                        </p>
                       </div>
                       <div class="five border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.quantity%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.quantityTwo%>
+                        </p>
                       </div>
                       <div class="five border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.rate%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.rateTwo%>
+                        </p>
                       </div>
                       <div
                         class="border-bottom amount"
-                        id="amountTwo"
+                        id="amountOne"
                         style="width: 6rem"
-                      >
-                      <!-- <p class="txt-center">
-                        <%=data.amount%>
-                      </p> -->
+                      ><p class="txt-center">
+                        <%=data.amountTwo%>
+                      </p>
                     </div>
                     </div>
                   </div>
                   <div>
                     <div class="about-product">
                       <div class="four border-bottom border-right"></div>
-                      <div class="eighteen border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.product%>
-                        </p> -->
+                      <div class="eighteen border-bottom border-right" style="justify-content: flex-start;">
+                        <p class="txt-center"style="padding-left: 4px;" >
+                            <%=data.productThree%>
+                        </p>
                       </div>
                       <div class="six border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.hsnCode%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.hsnCodeThree%>
+                        </p>
                       </div>
                       <div class="five border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.quantity%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.quantityThree%>
+                        </p>
                       </div>
                       <div class="five border-bottom border-right">
-                        <!-- <p class="txt-center">
-                            <%=data.rate%>
-                        </p> -->
+                        <p class="txt-center">
+                            <%=data.rateThree%>
+                        </p>
                       </div>
                       <div
                         class="border-bottom amount"
-                        id="amountThree"
+                        id="amountOne"
                         style="width: 6rem"
-                      >
-                    <!-- <p class="txt-center">
-                        <%=data.amount%>
-                    </p> -->
-                </div>
+                      ><p class="txt-center">
+                        <%=data.amountThree%>
+                      </p>
+                    </div>
                     </div>
                   </div>
                   <div class="total-amount-before-tax">
@@ -310,7 +310,7 @@
                       id="beforeTaxTotal"
                       style="width: 6rem"
                     >
-                <p class="txt-center">
+                <p class="txt-center" style="font-weight: bold;">
                     <%=data.amountBeforeTax%>
                 </p>
             </div>

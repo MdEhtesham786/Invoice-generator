@@ -43,11 +43,11 @@ const billSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    billToParty: {
+    billToPartyName: {
         type: String,
         required: false
     },
-    consignee: {
+    billToPartyAddress: {
         type: String,
         required: false
     },
@@ -83,23 +83,63 @@ const billSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    productDescription: {
+    productOne: {
         type: String,
         required: false
     },
-    hsnCode: {
+    productTwo: {
+        type: String,
+        required: false
+    },
+    productThree: {
+        type: String,
+        required: false
+    },
+    hsnCodeOne: {
         type: Number,
         required: false
     },
-    quantity: {
+    hsnCodeTwo: {
         type: Number,
         required: false
     },
-    rate: {
+    hsnCodeThree: {
         type: Number,
         required: false
     },
-    amount: {
+    quantityOne: {
+        type: Number,
+        required: false
+    },
+    quantityTwo: {
+        type: Number,
+        required: false
+    },
+    quantityThree: {
+        type: Number,
+        required: false
+    },
+    rateOne: {
+        type: Number,
+        required: false
+    },
+    rateTwo: {
+        type: Number,
+        required: false
+    },
+    rateThree: {
+        type: Number,
+        required: false
+    },
+    amountOne: {
+        type: Number,
+        required: false
+    },
+    amountTwo: {
+        type: Number,
+        required: false
+    },
+    amountThree: {
         type: Number,
         required: false
     },
@@ -118,24 +158,7 @@ const billSchema = new mongoose.Schema({
     amountAfterTax: {
         type: Number,
         required: false
-    },
-    bankName: {
-        type: String,
-        required: false
-    },
-    accountNo: {
-        type: Number,
-        required: false
-    },
-    ifscCode: {
-        type: String,
-        required: false
-    },
-    branch: {
-        type: String,
-        required: false
     }
-
 },);
 const registerSchema = new mongoose.Schema({
     username: {

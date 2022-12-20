@@ -185,6 +185,7 @@ header {
 }
 
 input {
+    text-transform: uppercase;
     height: 1.5rem;
     /* border: none; */
     border: none;
@@ -199,6 +200,8 @@ textarea:focus {
 }
 
 .textarea {
+    font-weight: bold;
+    text-transform: uppercase;
     width: 22rem;
 }
 
@@ -245,6 +248,10 @@ input::-webkit-inner-spin-button {
 
 .bill-input div {
     /* background-color: green; */
+}
+
+.bill-input div b {
+    margin: auto;
 }
 
 .btp,
@@ -322,6 +329,8 @@ input::-webkit-inner-spin-button {
     justify-content: center;
 }
 
+
+
 .total-amount-before-tax {
     width: 44rem;
     height: 2rem;
@@ -396,6 +405,33 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
 }
+
+.none {
+    display: none;
+}
+
+.amount {
+    cursor: default;
+    text-align: end;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.hsn {
+    text-align: center;
+}
+
+.rate {
+    text-align: center;
+}
+
+.products {
+    padding-left: 3px;
+    /* background-color: red; */
+}
+
 
 @media (max-width:700px) {
     body {

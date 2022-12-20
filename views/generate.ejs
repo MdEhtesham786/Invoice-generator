@@ -69,11 +69,11 @@
               <div class="grid-div-two">
                 <div class="border-bottom border-right">STATE</div>
                 <div class="border-bottom border-right">
-                  <input type="text" class="" name="state" style="width: 8.5rem;" />
+                  <input type="text" class="" value="MAHARASHTRA" readonly name="state" style="width: 8.5rem; cursor:default;" />
                 </div>
                 <div class="border-bottom border-right ">CODE</div>
                 <div class="border-bottom border-right">
-                  <input type="number" name="" class="code" style="width: 1.5rem;" />
+                  <input type="number"  name="code" value="27" class="code" readonly style="width: 1.5rem; cursor: default;" />
                 </div>
                 <div class="border-bottom border-right ">PLACE</div>
                 <div class="border-bottom">
@@ -93,18 +93,19 @@
             <section class="section-two">
               <div class="details">
                 <div class="bill border-right border-bottom">
-                  <b>BILL TO PARTY</b>
+                  <b>BILL TO PARTY (Name)</b>
                 </div>
-                <div class="consignee border-bottom">
-                  <b>DETAILS OF CONSIGNEE (SHIPPED TO)</b>
+                <div class="consignee border-bottom ">
+                   <input type="text" class="twenty-two" name="billToPartyName" id="" style="text-align: center;font-weight: bold; " >
+
                 </div>
               </div>
               <div class="bill-input">
                 <div class="btp border-bottom border-right">
-                  <textarea class="textarea" name="billToParty" > </textarea>
+                  <b>BILL TO PARTY (Address)</b>
                 </div>
                 <div class="doc border-bottom">
-                  <textarea class="textarea" name="consignee" > </textarea>
+                  <textarea class="textarea" name="billToPartyAddress" > </textarea>
                 </div>
 
               </div>
@@ -161,80 +162,74 @@
                 </div>
                 <div>
                   <div class="about-product">
-                    <div class="four border-bottom border-right"></div>
+                    <div class="four border-bottom border-right srNos "></div>
                     <div class="eighteen border-bottom border-right">
-                      <input class="eighteen" type="text" name=""/>
+                      <input class="eighteen products" type="text" name="productOne"  />
                     </div>
                     <div class="six border-bottom border-right">
-                      <input class="six" type="number" name="hsnCode" />
+                      <input class="six hsn" type="number" name="hsnCodeOne" />
                     </div>
                     <div class="five border-bottom border-right">
                       <input
                         class="five quantity"
                         type="number"
-                        id="quantityOne" name="quantity"
+                        id="quantityOne" name="quantityOne"
                       />
                     </div>
                     <div class="five border-bottom border-right">
-                      <input class="five rate" type="number" id="rateOne" name="rate" />
+                      <input class="five rate" type="number" id="rateOne" name="rateOne" />
                     </div>
-                    <div
-                      class="border-bottom amount"
-                      id="amountOne"
-                      style="width: 6rem"
-                    ></div>
+                    <div class="border-bottom " style="width: 6rem">
+                  <input type="number"  id="amountOne" class="six amount "  readonly name="amountOne">
+                </div>
                   </div>
                 </div>
                 <div>
                   <div class="about-product">
-                    <div class="four border-bottom border-right"></div>
+                    <div class="four border-bottom border-right srNos "></div>
                     <div class="eighteen border-bottom border-right">
-                      <input class="eighteen" type="text" />
+                      <input class="eighteen products none" type="text" name="productTwo" />
                     </div>
                     <div class="six border-bottom border-right">
-                      <input class="six" type="number" />
+                      <input class="six hsn" type="number" name="hsnCodeTwo" />
                     </div>
                     <div class="five border-bottom border-right">
                       <input
                         class="five quantity"
                         type="number"
-                        id="quantityTwo"
+                        id="quantityTwo" name="quantityTwo"
                       />
                     </div>
                     <div class="five border-bottom border-right">
-                      <input class="five rate" type="number" id="rateTwo" />
+                      <input class="five rate" type="number" id="rateTwo" name="rateTwo" />
                     </div>
-                    <div
-                      class="border-bottom amount"
-                      id="amountTwo"
-                      style="width: 6rem"
-                    ></div>
+                    <div class="border-bottom " style="width: 6rem">
+                      <input type="number"  id="amountTwo" class="six amount "  readonly name="amountTwo">
+                    </div>
                   </div>
                 </div>
                 <div>
                   <div class="about-product">
-                    <div class="four border-bottom border-right"></div>
+                    <div class="four border-bottom border-right srNos "></div>
                     <div class="eighteen border-bottom border-right">
-                      <input class="eighteen" type="text" />
+                      <input class="eighteen products none" type="text" name="productThree" />
                     </div>
                     <div class="six border-bottom border-right">
-                      <input class="six" type="number" />
+                      <input class="six hsn" type="number" name="hsnCodeThree" />
                     </div>
                     <div class="five border-bottom border-right">
                       <input
                         class="five quantity"
                         type="number"
-                        id="quantityThree"
+                        id="quantityThree" name="quantityThree"
                       />
                     </div>
                     <div class="five border-bottom border-right">
-                      <input class="five rate" type="number" id="rateThree" />
+                      <input class="five rate" type="number" id="rateThree" name="rateThree" />
                     </div>
-                    <div
-                      class="border-bottom amount"
-                      id="amountThree"
-                      style="width: 6rem"
-                    ></div>
+                    <div class="border-bottom " style="width: 6rem">
+                      <input type="number"  id="amountThree" class="six amount "  readonly name="amountThree">
+                    </div>
                   </div>
                 </div>
                 <div class="total-amount-before-tax">
@@ -244,20 +239,25 @@
                   </div>
                   <div
                     class="border-bottom"
-                    id="beforeTaxTotal"
+                   
                     style="width: 6rem"
-                  ></div>
+                  >
+                <input type="number" style="cursor: default; text-align: end;" class="six" readonly  name="amountBeforeTax" id="beforeTaxTotal" ></div>
                 </div>
                 <div class="total-amount-before-tax">
-                  <div class="twenty-two border-bottom border-right"></div>
+                  <div class="twenty-two border-bottom border-right">
+                  </div>
                   <div class="sixteen border-bottom border-right">
                     <b>ADD: CGST 9%</b>
                   </div>
                   <div
                     class="border-bottom"
                     style="width: 6rem"
-                    id="cgst"
-                  ></div>
+                    
+                  >
+                  <input type="number" style="cursor: default;text-align:end;" class="six" readonly name="cgst" id="cgst">
+                
+                </div>
                 </div>
                 <div class="total-amount-before-tax">
                   <div class="twenty-two border-bottom border-right"></div>
@@ -267,8 +267,9 @@
                   <div
                     class="border-bottom"
                     style="width: 6rem"
-                    id="sgst"
-                  ></div>
+                    
+                  >
+                <input type="number" style="cursor: default;text-align:end;" class="six" readonly name="sgst" id="sgst"></div>
                 </div>
                 <div class="total-amount-before-tax">
                   <div class="twenty-two border-bottom border-right"></div>
@@ -278,8 +279,9 @@
                   <div
                     class="border-bottom"
                     style="width: 6rem"
-                    id="afterTaxTotal"
-                  ></div>
+                    
+                  >
+                <input type="number" style="cursor: default;text-align:end;" class="six" readonly name="amountAfterTax" id="afterTaxTotal"></div>
                 </div>
               </div>
             </section>
