@@ -25,8 +25,6 @@ app.use('/', router);
 
 const deleteAll = async () => {
     try {
-        // const result = await Register.findOneAndDelete({ email: 'mdehteshamshaikh1@gmail.com' });
-        // console.log(result);
         console.log('Removed');
     } catch (err) {
         console.log(err);

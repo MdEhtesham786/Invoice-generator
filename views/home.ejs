@@ -10,24 +10,27 @@
                     <div class="card">
                         <img src="../static/img/pdf-icon.png" class="" alt="...">
                         <div class="card-content">
-                            <h5 class="">
+                            <!-- <h5 class="">
                                 <%=i+1%>
-                            </h5>
-                            <!-- <p class="">
+                            </h5> -->
+                            <p class="">
                                     <%=item.invoiceNo%>
-                                </p> -->
+                                </p>
                             <p class="">
                                 <%=item.invoiceDate%>
+                            </p>
+                            <p class="">
+                                <%=item.billToPartyName%>
                             </p>
                             <a href="/home/<%=item.id%>" class="btn btn-primary">Open</a>
                         </div>
                     </div>
                     <% })%>
                         <%}else{%>
-                            <h1>No data yet</h1>
+                            <h1 class="info" >No data yet</h1>
                             <%}%>
 
-                                <p class="info"></p>
+                                
 
         </div>
     </div>

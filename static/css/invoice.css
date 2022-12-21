@@ -149,7 +149,7 @@ header {
     display: grid;
     height: 2rem;
     /* background-color: black; */
-    grid-template-columns: 7rem 9rem 4rem 2rem 7rem 9rem 4rem 2rem;
+    grid-template-columns: repeat(4, 11rem);
 }
 
 .grid-div div {
@@ -168,6 +168,7 @@ header {
     padding-left: 3px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .grid {
@@ -276,13 +277,14 @@ input::-webkit-inner-spin-button {
     /* background-color: aliceblue; */
     height: 2rem;
     display: grid;
-    grid-template-columns: 7rem 15rem 7rem 15rem;
+    grid-template-columns: 22rem 22rem;
 }
 
 .pan-gst div {
     display: flex;
     align-items: center;
     padding-left: 3px;
+    justify-content: center;
 }
 
 .location {

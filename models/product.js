@@ -51,36 +51,14 @@ const billSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    partyPan: {
+
+    PAN: {
         type: String,
         required: false
     },
-    consigneePan: {
+
+    GSTIN: {
         type: String,
-        required: false
-    },
-    partyGstinNo: {
-        type: String,
-        required: false
-    },
-    consigneeGstinNo: {
-        type: String,
-        required: false
-    },
-    partyState: {
-        type: String,
-        required: false
-    },
-    partyStateCode: {
-        type: Number,
-        required: false
-    },
-    consigneeState: {
-        type: String,
-        required: false
-    },
-    consigneeStateCode: {
-        type: Number,
         required: false
     },
     productOne: {

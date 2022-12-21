@@ -129,64 +129,43 @@
                 </div>
                 <div class="doc border-bottom">
                   <p class="txt-center">
-                      <%=data.billToPartyAddress%>address
+                      <%=data.billToPartyAddress%>
                   </p>
                 </div>
   
               </div>
               <div class="pan-gst">
                 <div class="border-bottom border-right">PAN</div>
-                <div class="border-bottom border-right">
+                <div class="border-bottom ">
                   <p class="txt-center">
-                      <%=data.partyPan%>
+                      <%=data.PAN%>
                   </p>
                 </div>
-                <div class="border-bottom border-right">PAN</div>
-                <div class="border-bottom">
-                  <p class="txt-center">
-                      <%=data.consigneePan%>
-                  </p>
-                </div>
+               
               </div>
               <div class="pan-gst">
                 <div class="border-bottom border-right">GSTIN No.</div>
-                <div class="border-bottom border-right">
+                <div class="border-bottom ">
                   <p class="txt-center">
-                      <%=data.partyGstinNo%>
+                      <%=data.GSTIN%>
                   </p>
                 </div>
-                <div class="border-bottom border-right">GSTIN NO.</div>
-                <div class="border-bottom">
-                  <p class="txt-center">
-                      <%=data.consigneeGstinNo%>
-                  </p>
-                </div>
+               
               </div>
               <div class="grid-div-three">
                 <div class="border-bottom border-right">STATE</div>
                 <div class="border-bottom border-right">
                   <p class="txt-center">
-                      <%=data.partyState%>
-                  </p>
-                </div>
-                <div class="border-bottom border-right ">CODE</div>
-                <div class="border-bottom border-right">
-                  <p class="txt-center">
-                      <%=data.partyStateCode%>
-                  </p>
-                </div>
-                <div class="border-bottom border-right">STATE</div>
-                <div class="border-bottom border-right">
-                  <p class="txt-center">
-                      <%=data.consigneeState%>
+                      <%=data.state%>
                   </p>
                 </div>
                 <div class="border-bottom border-right ">CODE</div>
                 <div class="border-bottom ">
                   <p class="txt-center">
-                      <%=data.consigneeStateCode%>
+                      <%=data.code%>
                   </p>
                 </div>
+                
               </div>
             </section>
             <section class="section-three">
@@ -422,6 +401,6 @@
       </div>
     </div>
     <%}else{%>
-      <h1>First fill up the form</h1>
+      <h1 style="margin: auto;width: fit-content;">First fill up the form</h1>
       <%}%>
   
