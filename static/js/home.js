@@ -34,22 +34,23 @@ burger_btn.addEventListener('click', () => {
     }
 });
 Data.forEach((data) => {
-
     arr.push({
         title: data.lastElementChild.firstElementChild.innerText,
         date: data.lastElementChild.firstElementChild.nextElementSibling.innerText,
+        name: data.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerText,
         element: data
     });
 });
 const result = arr.map((item) => {
-    return { title: item.title, date: item.date, element: item.element };
+    return { title: item.title, date: item.date, name: item.name, element: item.element };
 });
 searchBar.addEventListener('keyup', (e) => {
+
     iterator = 0;
     searchBarResp.value = '';
     query = e.target.value.replace(/\s+/g, '').toLowerCase();
     result.forEach((item) => {
-        isVisible = item.title.replace(/\s+/g).toLowerCase().includes(query) || item.date.replace(/\s+/g).toLowerCase().includes(query);
+        isVisible = item.title.replace(/\s+/g, '').toLowerCase().includes(query) || item.date.replace(/\s+/g, '').toLowerCase().includes(query) || item.name.replace(/\s+/g, '').toLowerCase().includes(query);
         item.element.classList.toggle('hide', !isVisible);
         if (isVisible) {
             console.log('t');
@@ -70,7 +71,7 @@ searchBarResp.addEventListener('keyup', (e) => {
     searchBar.value = '';
     query = e.target.value.replace(/\s+/g, '').toLowerCase();
     arr.forEach((item) => {
-        isVisible = item.title.replace(/\s+/g).toLowerCase().includes(query) || item.date.replace(/\s+/g).toLowerCase().includes(query);
+        isVisible = item.title.replace(/\s+/g, '').toLowerCase().includes(query) || item.date.replace(/\s+/g, '').toLowerCase().includes(query) || item.name.replace(/\s+/g, '').toLowerCase().includes(query);
         item.element.classList.toggle('hide', !isVisible);
         if (isVisible) {
             console.log('true');

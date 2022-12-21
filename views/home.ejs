@@ -19,7 +19,7 @@
                             <p class="">
                                 <%=item.invoiceDate%>
                             </p>
-                            <p class="">
+                            <p class="partyName">
                                 <%=item.billToPartyName%>
                             </p>
                             <a href="/home/<%=item.id%>" class="btn btn-primary">Open</a>
@@ -27,8 +27,9 @@
                     </div>
                     <% })%>
                         <%}else{%>
-                            <h1 class="info" >No data yet</h1>
+                            <h1 class="" >No data yet</h1>
                             <%}%>
+                            <p class="info"></p>
 
                                 
 

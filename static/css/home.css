@@ -78,6 +78,10 @@
     font-weight: bold;
 }
 
+.partyName {
+    text-transform: uppercase;
+}
+
 .hide {
     display: none;
 }
