@@ -317,8 +317,13 @@
                 </div>
                 <div class="sign border-bottom border-right"></div>
                 <div class="for border-bottom proprietor">
-                  <p>for <b>AYESHA METAL</b></p>
-                  <img src="../static/img/Edited-Signature.png" alt="" srcset="">
+                  <%if(username == 'SHAHZAD'){%>
+                    <p>for <b>AYESHA METAL</b></p>
+                    <img src="../static/img/Edited-Signature.png" alt="">
+                    <%}else{%>
+                      <p>for <b><%=username%></b></p>
+                  <!-- <img src="../static/img/Edited-Signature.png" alt=""> -->
+                      <%}%>
                   <p>Proprietor</p>
                 </div>
               </div>
