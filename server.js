@@ -25,6 +25,7 @@ app.use('/', router);
 
 const deleteAll = async () => {
     try {
+        // console.log(result);
         console.log('Removed');
     } catch (err) {
         console.log(err);

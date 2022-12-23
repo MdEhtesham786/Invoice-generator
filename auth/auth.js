@@ -12,6 +12,7 @@ const auth = async (req, res, next) => {
                 const Users = await Register.findOne({ _id: verify._id });
                 if (Users) {
                     res.users = Users;
+                    res.userEmail = Users.email;
                     res.token = token;
                     authenticated = true;
                 }

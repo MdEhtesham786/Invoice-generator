@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const billSchema = new mongoose.Schema({
+    userEmail: {
+        type: String,
+        required: true
+    },
     invoiceNo: {
         type: String,
         required: false

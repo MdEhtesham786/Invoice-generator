@@ -10,7 +10,7 @@ router.get('/forgot', forgotPage);
 router.get('/home', auth, homePage);
 router.get('/generate', auth, generatePage);
 router.get('/home/:id', auth, searchedInvoice);
-router.get('/logout', logout);
+router.get('/logout', auth, logout);
 router.get('/static', auth, static);
 //Post
 router.post('/download', downloadPdf);

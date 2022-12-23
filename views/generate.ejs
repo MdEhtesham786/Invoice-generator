@@ -10,7 +10,12 @@
           <div class="heading">
             <div class="name">
               <div id="logo-name">
-                <h1>AYESHA METAL</h1>
+                <%if(username == 'SHAHZAD'){%>
+                  <h1>AYESHA METAL</h1>
+
+                  <%}else{%>
+                    <h1><%=username%></h1>
+                    <%}%>
               </div>
               <div class="about">
                 <h2>Dealers in: Ferrous & Non-Ferrous Metals</h2>

@@ -1,16 +1,20 @@
 const { Invoice, Register } = require('../models/product');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 //Get
 const homePage = async (req, res) => {
     try {
         if (res.authenticated) {
-            const Data = (await Invoice.find()).reverse();
+            const userEmail = res.userEmail;
+            const Data = (await Invoice.find({ userEmail })).reverse();
             return res.render('home', { title: 'Home', data: Data });
         } else {
             return res.redirect('/');
         }
     } catch (err) {
         console.log(err);
+        res.send(err);
 
     }
 };
@@ -18,12 +22,29 @@ const homePage = async (req, res) => {
 const generatePage = async (req, res) => {
     try {
         if (res.authenticated) {
-            res.render('generate', { title: 'Generate Invoice', layout: '../views/layouts/invoicveLayout.ejs' });
+            const token = req.cookies.jwt;
+            if (token) {
+                const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+                const Users = await Register.findOne({ _id: verifyToken._id });
+                if (Users) {
+                    const username = Users.username;
+                    res.render('generate', { title: 'Generate Invoice', username, layout: '../views/layouts/invoicveLayout.ejs' });
+
+                } else {
+                    console.log('User not found');
+                    return res.redirect('/');
+                }
+            } else {
+                console.log('Token not found');
+                return res.redirect('/');
+            }
         } else {
+            console.log('Authentication failed');
             res.redirect('/');
         }
     } catch (err) {
         console.log(err);
+        res.redirect('/home');
 
     }
 };
@@ -36,6 +57,7 @@ const loginPage = async (req, res) => {
         }
     } catch (err) {
         console.log(err);
+        res.send(err);
 
     }
 };
@@ -45,7 +67,7 @@ const signUpPage = async (req, res) => {
         res.render('form', { title: 'Login', message: '', formType: 'signup', layout: '../views/layouts/formLayout.ejs' });
     } catch (err) {
         console.log(err);
-
+        res.send(err);
     }
 };
 const forgotPage = async (req, res) => {
@@ -53,20 +75,37 @@ const forgotPage = async (req, res) => {
         res.render('form', { title: 'Forgot', formType: 'forgot', layout: '../views/layouts/formLayout.ejs' });
     } catch (err) {
         console.log(err);
+        res.send(err);
 
     }
 };
 const searchedInvoice = async (req, res) => {
     try {
         if (res.authenticated) {
-            const { id: _id } = req.params;
-            const result = await Invoice.findOne({ _id });
-            res.render('searchedInvoice', { title: 'Searched Invoice', data: result, layout: '../views/layouts/invoicveLayout.ejs' });
+            const token = req.cookies.jwt;
+            if (token) {
+                const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+                const Users = await Register.findOne({ _id: verifyToken._id });
+                if (Users) {
+                    const username = Users.username;
+                    const { id: _id } = req.params;
+                    const result = await Invoice.findOne({ _id });
+                    res.render('searchedInvoice', { title: 'Searched Invoice', username, data: result, layout: '../views/layouts/invoicveLayout.ejs' });
+                } else {
+                    console.log('User not found');
+                    return res.redirect('/');
+                }
+            } else {
+                console.log('Token not found');
+                return res.redirect('/');
+            }
+
         } else {
             res.redirect('/');
         }
     } catch (err) {
         console.log(err);
+        res.redirect('/home');
 
     }
 };
@@ -80,7 +119,7 @@ const static = async (req, res) => {
         }
     } catch (err) {
         console.log(err);
-
+        res.send(err);
     }
 };
 const logout = async (req, res) => {
@@ -99,17 +138,33 @@ const logout = async (req, res) => {
         }
     } catch (err) {
         console.log(err);
+        res.send(err);
 
     }
 };
 //Post
 const downloadPdf = async (req, res) => {
     try {
-        console.log(req.body);
-        const clientInvoice = new Invoice(req.body);
-        await clientInvoice.save();
-        console.log('Added');
-        res.render('invoice', { title: 'Result', data: req.body, layout: '../views/layouts/invoicveLayout.ejs' });
+        // console.log(req.body);
+        const token = req.cookies.jwt;
+        if (token) {
+            const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+            const Users = await Register.findOne({ _id: verifyToken._id });
+            if (Users) {
+                const username = Users.username;
+                const clientInvoice = new Invoice(req.body);
+                clientInvoice.userEmail = Users.email;
+                await clientInvoice.save();
+                console.log('Added');
+                res.render('invoice', { title: 'Result', username, data: req.body, layout: '../views/layouts/invoicveLayout.ejs' });
+            } else {
+                console.log('User not found');
+                return res.redirect('/');
+            }
+        } else {
+            console.log('Token not found');
+            return res.redirect('/');
+        }
     } catch (err) {
         console.log(err);
 
