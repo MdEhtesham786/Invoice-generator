@@ -28,30 +28,30 @@ let beforeTaxCheck = () => {
     if (amountTwo.value) {
       if (amountThree.value) {
         beforeTaxTotal.value =
-          parseInt(amountOne.value) +
-          parseInt(amountTwo.value) +
-          parseInt(amountThree.value);
+          parseFloat(amountOne.value) +
+          parseFloat(amountTwo.value) +
+          parseFloat(amountThree.value);
       } else {
         beforeTaxTotal.value =
-          parseInt(amountOne.value) + parseInt(amountTwo.value);
+          parseFloat(amountOne.value) + parseFloat(amountTwo.value);
       }
     } else {
       if (amountThree.value) {
         beforeTaxTotal.value =
-          parseInt(amountOne.value) + parseInt(amountThree.value);
+          parseFloat(amountOne.value) + parseFloat(amountThree.value);
       } else {
-        beforeTaxTotal.value = parseInt(amountOne.value);
+        beforeTaxTotal.value = parseFloat(amountOne.value);
       }
     }
   } else if (amountTwo.value) {
     if (amountThree.value) {
       beforeTaxTotal.value =
-        parseInt(amountTwo.value) + parseInt(amountThree.value);
+        parseFloat(amountTwo.value) + parseFloat(amountThree.value);
     } else {
-      beforeTaxTotal.value = parseInt(amountTwo.value);
+      beforeTaxTotal.value = parseFloat(amountTwo.value);
     }
   } else if (amountThree.value) {
-    beforeTaxTotal.value = parseInt(amountThree.value);
+    beforeTaxTotal.value = parseFloat(amountThree.value);
   } else {
     beforeTaxTotal.value = '';
     cgst.value = '';
@@ -60,9 +60,9 @@ let beforeTaxCheck = () => {
 
   }
   if (beforeTaxTotal.value) {
-    cgstValue = (9 / 100) * parseInt(beforeTaxTotal.value);
-    sgstValue = (9 / 100) * parseInt(beforeTaxTotal.value);
-    afterTaxTotalValue = parseInt(beforeTaxTotal.value) + cgstValue + sgstValue;
+    cgstValue = (9 / 100) * parseFloat(beforeTaxTotal.value);
+    sgstValue = (9 / 100) * parseFloat(beforeTaxTotal.value);
+    afterTaxTotalValue = parseFloat(beforeTaxTotal.value) + cgstValue + sgstValue;
     cgst.value = cgstValue.toFixed(2);
     sgst.value = sgstValue.toFixed(2);
     afterTaxTotal.value = afterTaxTotalValue.toFixed(2);
@@ -80,14 +80,15 @@ quantityOne.addEventListener("input", function () {
   quantityValueOne = quantityOne.value;
   if (quantityValueOne == null || quantityValueOne == "") {
     amountOne.value = "";
-
+    `  `;
   } else {
     if (rateValueOne == null || rateValueOne == "") {
       amountOne.value = "";
 
 
     } else {
-      amountOne.value = parseInt(quantityValueOne) * parseInt(rateValueOne);
+      amountOne.value = parseFloat(quantityValueOne) * parseInt(rateValueOne);
+      amountOne.value = parseFloat(amountOne.value).toFixed(2);
     }
   }
   beforeTaxCheck();
@@ -100,7 +101,8 @@ quantityTwo.addEventListener("input", function () {
     if (rateValueTwo == null || rateValueTwo == "") {
       amountTwo.value = "";
     } else {
-      amountTwo.value = parseInt(quantityValueTwo) * parseInt(rateValueTwo);
+      amountTwo.value = parseFloat(quantityValueTwo) * parseInt(rateValueTwo);
+      amountTwo.value = parseFloat(amountTwo.value).toFixed(2);
     }
   }
   beforeTaxCheck();
@@ -117,7 +119,8 @@ quantityThree.addEventListener("input", function () {
 
     } else {
       amountThree.value =
-        parseInt(quantityValueThree) * parseInt(rateValueThree);
+        parseFloat(quantityValueThree) * parseInt(rateValueThree);
+      amountThree.value = parseFloat(amountThree.value).toFixed(2);
     }
   }
   beforeTaxCheck();
@@ -130,7 +133,8 @@ rateOne.addEventListener("input", function () {
     if (quantityValueOne == null || quantityValueOne == "") {
       amountOne.value = "";
     } else {
-      amountOne.value = parseInt(quantityValueOne) * parseInt(rateValueOne);
+      amountOne.value = parseFloat(quantityValueOne) * parseInt(rateValueOne);
+      amountOne.value = parseFloat(amountOne.value).toFixed(2);
     }
   }
   console.log('one');
@@ -144,10 +148,10 @@ rateTwo.addEventListener("input", function () {
     if (quantityValueTwo == null || quantityValueTwo == "") {
       amountTwo.value = "";
     } else {
-      amountTwo.value = parseInt(quantityValueTwo) * parseInt(rateValueTwo);
+      amountTwo.value = parseFloat(quantityValueTwo) * parseInt(rateValueTwo);
+      amountTwo.value = parseFloat(amountTwo.value).toFixed(2);
     }
   }
-  console.log('two');
 
   beforeTaxCheck();
 });
@@ -163,7 +167,8 @@ rateThree.addEventListener("input", function () {
 
     } else {
       amountThree.value =
-        parseInt(quantityValueThree) * parseInt(rateValueThree);
+        parseFloat(quantityValueThree) * parseInt(rateValueThree);
+      amountThree.value = parseFloat(amountThree.value).toFixed(2);
     }
   }
   console.log('three');
